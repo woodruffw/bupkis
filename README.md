@@ -2,7 +2,7 @@ bupkis
 ======
 
 ![license](https://raster.shields.io/badge/license-MIT%20with%20restrictions-green.png)
-[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/bupkis/CI/master)](https://github.com/woodruffw/bupkis/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/bupkis/CI/main)](https://github.com/woodruffw/bupkis/actions?query=workflow%3ACI)
 
 A small static album generator.
 
