@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<h1 class="album-title">{{ title }}</h1>
+
+{{#if description}}
+<div class="album-desc">
+{{{ description }}}
+</div>
+{{/if}}
+
+<div class="gallery">
+  <div class="row">
+    <div class="column">
+      {{#each photos as |photo| ~}}
+      {{#if (even @index)}}
+      <a href="{{ photo.slug }}"><img src="{{ photo.slug }}/{{ photo.thumb_name }}" loading="lazy"></a>
+      {{/if}}
+      {{/each~}}
+    </div>
+    <div class="column">
+      {{#each photos as |photo| ~}}
+      {{#if (odd @index)}}
+      <a href="{{ photo.slug }}"><img src="{{ photo.slug }}/{{ photo.thumb_name }}" loading="lazy"></a>
+      {{/if}}
+      {{/each~}}
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>this album rendered with love by <a href="https://github.com/woodruffw/bupkis">bupkis</a></p>
+</p>
+
+</body>
+</html>

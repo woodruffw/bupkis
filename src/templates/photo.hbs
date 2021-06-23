@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} - {{ slug }}</title>
+  <link href="../style.css" rel="stylesheet">
+  {{#if javascript}}
+  <script type="text/javascript" src="../photo.js" defer></script>
+  {{/if}}
+</head>
+<body>
+  <div>
+    <div class="photo-index">
+      <p>index</p>
+      {{#each slugs as |slug| ~}}
+      {{#if (eq @index ../index)}}
+      <p><a id="current" href="../{{ slug }}">{{ @index }}</a> (*)</p>
+      {{else}}
+      <p><a href="../{{ slug }}">{{ @index }}</a></p>
+      {{/if}}
+      {{/each~}}
+    </div>
+
+    <div class="imgbox">
+      <div class="thirdbox">
+        <div class="third">
+          {{#if prev_slug }}
+          <a id="prev" href="../{{ prev_slug }}">prev</a> / <a id="top" href="..">top</a>
+          {{else}}
+          <a id="top" href="..">top</a>
+          {{/if}}
+        </div>
+        <div class="third center">
+          <a href="{{ name }}">fullres</a>
+        </div>
+        <div class="third right">
+          {{#if next_slug}}
+            <a id="next" href="../{{ next_slug }}">next</a>
+          {{/if}}
+        </div>
+      </div>
+
+      <img class="single" src="{{ thumb_name }}" loading="lazy">
+
+      {{#if description}}
+      <div class="image-caption">
+      {{{ description }}}
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+[package]
+name = "bupkis"
+version = "0.1.0"
+authors = ["William Woodruff <william@yossarian.net>"]
+edition = "2018"
+description = "A small static album generator"
+license-file = "LICENSE"
+readme = "README.md"
+homepage = "https://github.com/woodruffw/bupkis"
+
+[dependencies]
+anyhow = "1.0"
+clap = "3.0.0-beta.2"
+env_logger = "0.8"
+handlebars = "4.0"
+image = "0.23"
+indicatif = "0.16"
+log = "0.4"
+pulldown-cmark = "0.8"
+rust-embed = "5.9"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+slug = "0.1.4"
+threadpool = "1.8"
