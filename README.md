@@ -6,7 +6,7 @@ bupkis
 
 A small static album generator.
 
-[Demo album](https://yossarian.net/media/trips/phoebe-s-graduation-2021/).
+[Demo album](https://yossarian.net/media/trips/west-virginia-2021/).
 
 ## Features
 
