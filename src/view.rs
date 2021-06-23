@@ -61,6 +61,7 @@ impl TryFrom<config::Album> for Album {
                 };
                 let next_slug = album.photos.get(i + 1).map(|p| p.slugify()).transpose()?;
 
+                #[allow(clippy::redundant_field_names)]
                 Ok(Photo {
                     inner: photo.clone(),
                     javascript: album.javascript,
@@ -77,6 +78,7 @@ impl TryFrom<config::Album> for Album {
             })
             .collect::<Result<Vec<Photo>>>()?;
 
+        #[allow(clippy::redundant_field_names)]
         Ok(Self {
             javascript: album.javascript,
             title: album.title.clone(),
@@ -117,7 +119,7 @@ impl Album {
                 log::debug!("thumbnail: {:?} -> {:?}", src_image, dst_thumb);
                 pool.execute(move || {
                     util::thumbnail(&src_image, &dst_thumb)
-                        .expect(&format!("thumbnailing of {:?} failed", src_image));
+                        .unwrap_or_else(|_| panic!("thumbnailing of {:?} failed", src_image));
                 });
             }
 
@@ -142,10 +144,7 @@ impl Album {
             Style::get("style.css").unwrap(),
         )?;
 
-        fs::write(
-            album_dir.join("photo.js"),
-            Script::get("photo.js").unwrap(),
-        )?;
+        fs::write(album_dir.join("photo.js"), Script::get("photo.js").unwrap())?;
 
         Ok(())
     }
