@@ -55,11 +55,11 @@ fn main() -> Result<()> {
 
     handlebars.register_template_string(
         "album",
-        String::from_utf8(view::Templates::get("album.hbs").unwrap().to_vec())?,
+        String::from_utf8(view::Templates::get("album.hbs").unwrap().data.to_vec())?,
     )?;
     handlebars.register_template_string(
         "photo",
-        String::from_utf8(view::Templates::get("photo.hbs").unwrap().to_vec())?,
+        String::from_utf8(view::Templates::get("photo.hbs").unwrap().data.to_vec())?,
     )?;
 
     let app = app();
