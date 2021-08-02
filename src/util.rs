@@ -7,7 +7,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use pulldown_cmark::{html, Options, Parser};
 
 pub fn render_markdown(input: &str) -> String {
-    let parser = Parser::new_ext(&input, Options::ENABLE_STRIKETHROUGH);
+    let parser = Parser::new_ext(input, Options::ENABLE_STRIKETHROUGH);
     let mut output = String::new();
 
     html::push_html(&mut output, parser);
