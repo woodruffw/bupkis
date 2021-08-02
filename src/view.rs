@@ -71,7 +71,7 @@ impl TryFrom<config::Album> for Album {
                     prev_slug: prev_slug,
                     next_slug: next_slug,
                     title: album.title.clone(),
-                    description: photo.desc.as_ref().map(|d| util::render_markdown(&d)),
+                    description: photo.desc.as_ref().map(|d| util::render_markdown(d)),
                     name: photo.name.clone(),
                     thumb_name: format!("thumb-{}", &photo.name),
                 })
