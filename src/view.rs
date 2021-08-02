@@ -141,10 +141,13 @@ impl Album {
 
         fs::write(
             album_dir.join("style.css"),
-            Style::get("style.css").unwrap(),
+            Style::get("style.css").unwrap().data,
         )?;
 
-        fs::write(album_dir.join("photo.js"), Script::get("photo.js").unwrap())?;
+        fs::write(
+            album_dir.join("photo.js"),
+            Script::get("photo.js").unwrap().data,
+        )?;
 
         Ok(())
     }
