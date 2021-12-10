@@ -17,7 +17,7 @@ fn app<'a>() -> App<'a> {
                 .about("generate an skeleton album.yml")
                 .arg(
                     Arg::new("album-dir")
-                        .about("the album directory")
+                        .help("the album directory")
                         .index(1)
                         .required(true),
                 ),
@@ -27,13 +27,13 @@ fn app<'a>() -> App<'a> {
                 .about("generate HTML for the given album")
                 .arg(
                     Arg::new("album-dir")
-                        .about("the album directory")
+                        .help("the album directory")
                         .index(1)
                         .required(true),
                 )
                 .arg(
                     Arg::new("output-dir")
-                        .about("the output directory")
+                        .help("the output directory")
                         .index(2)
                         .required(true),
                 ),
