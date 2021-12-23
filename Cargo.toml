@@ -20,7 +20,7 @@ handlebars = "4.1"
 image = "0.23"
 indicatif = "0.16"
 log = "0.4"
-pulldown-cmark = "0.8"
+pulldown-cmark = "0.9"
 rust-embed = "6.3"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8"
