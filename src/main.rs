@@ -1,19 +1,19 @@
 use std::convert::TryFrom;
 
 use anyhow::Result;
-use clap::{App, Arg};
+use clap::{Arg, Command};
 use handlebars::{handlebars_helper, Handlebars};
 
 mod config;
 mod util;
 mod view;
 
-fn app<'a>() -> App<'a> {
-    App::new(env!("CARGO_PKG_NAME"))
+fn app<'a>() -> Command<'a> {
+    Command::new(env!("CARGO_PKG_NAME"))
         .version(env!("CARGO_PKG_VERSION"))
         .about(env!("CARGO_PKG_DESCRIPTION"))
         .subcommand(
-            App::new("skeleton")
+            Command::new("skeleton")
                 .about("generate an skeleton album.yml")
                 .arg(
                     Arg::new("album-dir")
@@ -23,7 +23,7 @@ fn app<'a>() -> App<'a> {
                 ),
         )
         .subcommand(
-            App::new("generate")
+            Command::new("generate")
                 .about("generate HTML for the given album")
                 .arg(
                     Arg::new("album-dir")
