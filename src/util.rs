@@ -1,8 +1,8 @@
 use std::path::Path;
 
 use anyhow::Result;
+use image::imageops;
 use image::io::Reader as ImageReader;
-use image::{imageops, GenericImageView};
 use indicatif::{ProgressBar, ProgressStyle};
 use pulldown_cmark::{html, Options, Parser};
 
